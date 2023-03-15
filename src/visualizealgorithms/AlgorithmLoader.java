@@ -2,7 +2,10 @@ package visualizealgorithms;
 
 //Project imports
 import visualizealgorithms.bll.algorithm.IAlgorithm;
+import visualizealgorithms.bll.algorithm.Seartch.BinarySearch;
 import visualizealgorithms.bll.algorithm.sorting.BubbleSort;
+import visualizealgorithms.bll.algorithm.sorting.MergeSort;
+import visualizealgorithms.bll.algorithm.sorting.QuickSort;
 import visualizealgorithms.bll.algorithm.sorting.SelectionSort;
 
 //Java imports
@@ -22,6 +25,9 @@ public class AlgorithmLoader {
 
         algorithms.add(new BubbleSort());
         algorithms.add(new SelectionSort());
+        algorithms.add(new MergeSort());
+        algorithms.add(new QuickSort());
+        //algorithms.add(new BinarySearch());
 
 
         //Add implemented/selected algorithms here..
