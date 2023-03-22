@@ -12,16 +12,16 @@ public class SelectionSort extends GenericAlgorithm {
     @Override
     public void doWork() {
 
-        int[]b = (int[]) super.getData();
+        Comparable[]b = (Comparable[]) super.getData();
 
         for (int i = 0; i < b.length - 1; i++){
             int minIndex = i;
             for (int j = i + 1; j < b.length; j++){
-                if (b[j] < b[minIndex]){
+                if (b[j].compareTo(b[minIndex]) < 0){
                     minIndex = j;
                 }
             }
-            int tmp = b[i];
+            Comparable tmp = b[i];
             b[i]  = b[minIndex];
             b[minIndex] = tmp;
         }

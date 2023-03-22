@@ -11,14 +11,14 @@ public class BubbleSort extends GenericAlgorithm {
 
     @Override
     public void doWork() {
-        int[]b = (int[]) super.getData();
+        Comparable[]b = (Comparable[]) super.getData();
 
-        for (int i = 1; i < b.length; i++){
-            for (int j = 0; j < b.length-1; j++){
-                if (b[j] > b[j + 1]){
-                    int tmp = b[j];
-                    b[j] = b[j + 1];
-                    b[j + 1] = tmp;
+        for (int i = 0; i < b.length; i++){
+            for (int j = 1; j < b.length-1; j++){
+                if (b[j - 1].compareTo(b[j])>0){
+                    Comparable tmp = b[j-1];
+                    b[j-1] = b[j];
+                    b[j] = tmp;
                 }
             }
         }

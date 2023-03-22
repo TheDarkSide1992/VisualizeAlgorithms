@@ -10,24 +10,24 @@ public class MergeSort extends GenericAlgorithm {
 
     @Override
     public void doWork() {
-        int[]b = (int[]) super.getData();
+        Comparable[]b = (Comparable[]) super.getData();
 
         mergeSort(b, b.length);
     }
 
-    private static void mergeSort(int[] a, int n) {
+    private static void mergeSort(Comparable[] a, int n) {
         if (n < 2) {
             return;
         }
         int mid = n / 2;
-        int[] l = new int[mid];
-        int[] r = new int[n - mid];
+        Comparable[] l = new Comparable[mid];
+        Comparable[] r = new Comparable[n - mid];
 
         for (int i = 0; i < mid; i++) {
             l[i] = a[i];
         }
         for (int i = mid; i < n; i++) {
-            r[i - mid] = a[i];
+            r[i - mid].compareTo(a[i]);
         }
         mergeSort(l, mid);
         mergeSort(r, n - mid);
@@ -35,11 +35,11 @@ public class MergeSort extends GenericAlgorithm {
         merge(a, l, r, mid, n - mid);
     }
 
-    private static void merge(int[] a, int[] l, int[] r, int left, int right) {
+    private static void merge(Comparable[] a, Comparable[] l, Comparable[] r, int left, int right) {
 
         int i = 0, j = 0, k = 0;
         while (i < left && j < right) {
-            if (l[i] <= r[j]) {
+            if (l[i].compareTo(r[j]) <= 0) {
                 a[k++] = l[i++];
             }
             else {
